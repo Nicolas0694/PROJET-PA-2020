@@ -1,6 +1,5 @@
 package org.Main;
 
-import NTA.Game.PLUGIN;
 import javafx.geometry.Pos;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.VBox;
@@ -9,9 +8,9 @@ public class PluginPicker extends VBox {
 
     private ImageView circleImage;
 
-    private String circleChoosen = "NTA_game/GUI/src/main/java/NTA/Game/resources/grey_circle.png";
+    private String circleChoosen = "NTA-Game/Commun/src/main/resources/grey_circle.png";
 
-    private String circleNotChoosen = "NTA_game/GUI/src/main/java/NTA/Game/resources/grey_tickGrey.png";
+    private String circleNotChoosen = "NTA-Game/Commun/src/main/resources/grey_tickGrey.png";
 
     private PLUGIN plugin;
     private boolean isCircleChoosen;

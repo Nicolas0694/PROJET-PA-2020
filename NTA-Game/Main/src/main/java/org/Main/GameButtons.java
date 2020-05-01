@@ -12,9 +12,9 @@ import java.io.FileNotFoundException;
 
 public class GameButtons extends Button{
 
-    private final static String FONT_PATH = "file:///NTA_game/ressources/Buttons/kenvector_future.ttf";
-    private final String BUTTON_PRESSED = "-fx-background-color: transparent; -fx-background-image: url('resources/Pressed.png')";
-    private final String BUTTON_FREE = "-fx-background-image: url('resources/Unpress.png')";
+    private final static String FONT_PATH = "file:///NTA-Game/Commun/src/main/resources/kenvector_future.ttf";
+    private final String BUTTON_PRESSED = "-fx-background-color: transparent; -fx-background-image: url('NTA-Game/Commun/src/main/resources/Pressed.png')";
+    private final String BUTTON_FREE = "-fx-background-image: url('NTA-Game/Commun/src/main/resources/Unpress.png')";
 
     public GameButtons(String text) {
         setText(text);

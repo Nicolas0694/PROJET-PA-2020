@@ -129,13 +129,13 @@ public class Menu extends Application {
     }
 
     private void createBackground(){
-        Image backgroundImage = new Image("file:///resources/Buttons/background.png", 256,256, false,true);
+        Image backgroundImage = new Image("file:///NTA-Game/Commun/src/main/resources/background.png", 256,256, false,true);
         BackgroundImage background = new BackgroundImage(backgroundImage, BackgroundRepeat.REPEAT, BackgroundRepeat.REPEAT, BackgroundPosition.DEFAULT, null);
         mainPane.setBackground(new Background(background));
     }
 
     private void createLogo(){
-        ImageView logo = new ImageView("file:///resources/Buttons/NTA_ITSINTHEGAME.png");
+        ImageView logo = new ImageView("file:///NTA-Game/Commun/src/main/resources/NTA_ITSINTHEGAME.png");
         logo.setLayoutX(400);
         logo.setLayoutY(50);
 

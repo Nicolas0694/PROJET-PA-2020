@@ -9,8 +9,8 @@ import javafx.util.Duration;
 
 public class GameSubScene extends SubScene {
 
-    private final static String FONT = "file:///NTA_game/GUI/src/main/java/NTA/Game/resources/kenvector_future.ttf";
-    private final static String BACKGROUND = "file:///NTA_game/GUI/src/main/java/NTA/Game/resources/red_panel.png";
+    private final static String FONT = "file:///NTA-Game/Commun/src/main/resources/kenvector_future.ttf";
+    private final static String BACKGROUND = "file:///NTA-Game/Commun/src/main/resources/red_panel.png";
     private boolean isHidden;
     public GameSubScene() {
         super(new AnchorPane(), 600, 400);

@@ -16,8 +16,8 @@ import java.io.FileNotFoundException;
 
 
 public class InfoLabel extends Label {
-    public final static String FONT_PATH = "file:///NTA_game/GUI/src/main/java/NTA/Game/resources/kenvector_future.ttf";
-    public static final String BACKGROUND = "file:///NTA_game/GUI/src/main/java/NTA/Game/resources/red_panel.png";
+    public final static String FONT_PATH = "file:///NTA-Game/Commun/src/main/resources/kenvector_future.ttf";
+    public static final String BACKGROUND = "file:///NTA-Game/Commun/src/main/resources/red_panel.png";
 
     public InfoLabel(String text){
         setPrefWidth(400);
