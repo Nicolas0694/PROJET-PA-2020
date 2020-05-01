@@ -28,5 +28,10 @@
       <version>14</version>
       <type>pom</type>
     </dependency>
+    <dependency>
+      <groupId>org.Commun</groupId>
+      <artifactId>Commun</artifactId>
+      <version>1.0</version>
+    </dependency>
   </dependencies>
 </project>
