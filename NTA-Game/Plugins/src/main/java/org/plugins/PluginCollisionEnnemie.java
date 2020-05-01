@@ -1,18 +1,18 @@
-package org.Plugins;
+package org.plugins;
 
 /**
  * @author Thomas Gauci
  */
 
 
-public class CollisionEnnemie implements InterfaceCollisionEnnemie {
+public class PluginCollisionEnnemie implements CollisionEnnemie {
 
     Personnage ennemie;
 
     /**
      * Constructeur qui permet...
      */
-    public CollisionEnnemie(Personnage ennemie){
+    public PluginCollisionEnnemie(Personnage ennemie) {
         this.ennemie = ennemie;
     }
 

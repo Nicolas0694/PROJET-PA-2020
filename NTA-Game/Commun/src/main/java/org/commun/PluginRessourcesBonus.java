@@ -1,16 +1,15 @@
-package org.Plugins;
+package org.commun;
 
 import java.util.Random;
-import java.lang.Math;
 
 /**
  * @author Thomas Gauci
  */
 
-public class RessourcesBonus implements InterfaceRessourcesBonus {
+public class PluginRessourcesBonus implements RessourcesBonus {
 
     private String type;
-    private String types["vie","bouclier","munition","degat"];
+    private String types[] = { "vie", "bouclier", "munition", "degat" };
     private int vieBonus;
     private int degatBonus;
     private int bouclier;
@@ -20,8 +19,8 @@ public class RessourcesBonus implements InterfaceRessourcesBonus {
     /**
      * Constructeur qui permet d'initialiser le bonus. Le bonus est aléatoire
      */
-    public RessourcesBonus(){
-        Random random = new Random()
+    public PluginRessourcesBonus() {
+        Random random = new Random();
         switch(this.type = this.types[random.nextInt(4)]) {
             case "vie":
                 this.vieBonus = 25;
@@ -68,6 +67,11 @@ public class RessourcesBonus implements InterfaceRessourcesBonus {
 
     public final String getType(){
         return this.type;
+    }
+
+    @Override
+    public void obtenirBonus() {
+
     }
 
 }

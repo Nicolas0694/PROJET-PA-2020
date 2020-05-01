@@ -1,18 +1,19 @@
-package org.Plugins;
+package org.plugins;
 
 /**
  * @author Thomas Gauci
  */
 
-public class CollisionAire implements InterfaceCollisionEnnemie {
+public class PluginCollisionAire implements CollisionEnnemie {
 
     AireDeJeu aire;
 
     /**
      * Constructeur qui permet d'initialiser l'aire de jeu
+     * 
      * @param aire l'aide de jeu
      */
-    public CollisionAire(AireDeJeu aire){
+    public PluginCollisionAire(AireDeJeu aire) {
         this.aire = aire;
     }
 

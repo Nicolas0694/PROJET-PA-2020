@@ -1,6 +1,6 @@
-package org.Commun;
+package org.main;
 
-public interface InterfaceJoueur {
+public interface Joueur {
 
     public void tirer();
 

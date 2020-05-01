@@ -1,4 +1,4 @@
-package org.Plugins;
+package org.plugins;
 
 import java.awt.Point;
 
@@ -6,7 +6,7 @@ import java.awt.Point;
  * @author Thomas Gauci, Alexis Vighi
  */
 
-public class Joueur implements InterfaceJoueur {
+public class PluginJoueur implements Joueur {
 
     private int vie;
     private int bouclier;
@@ -17,7 +17,7 @@ public class Joueur implements InterfaceJoueur {
     /**
      * Constructeur qui permet d'initialiser le joueur avec des statistiques de base
      */
-    public Joueur(){
+    public PluginJoueur() {
         this.vie = 100;
         this.bouclier = 0;
         this.position = new Point(0,0);

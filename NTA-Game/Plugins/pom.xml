@@ -28,10 +28,10 @@
       <version>14</version>
       <type>pom</type>
     </dependency>
-    <dependency>
-      <groupId>org.Commun</groupId>
+    <!-- <dependency>
+      <groupId>org.commun</groupId>
       <artifactId>Commun</artifactId>
       <version>1.0</version>
-    </dependency>
+    </dependency> -->
   </dependencies>
 </project>
