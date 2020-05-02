@@ -1,6 +1,6 @@
 package org.commun;
 
-import javafx.geometry.Point2D;
+import java.awt.Point;
 
 /**
  * @author Thomas Gauci
@@ -22,17 +22,34 @@ public class PluginCollisionAire implements CollisionEnnemie {
     /**
      * @author Thomas Gauci
      * Permet de donner vérifier si le joueur sort de l'aire de jeu
-     * @param pos la position du joueur
+     * @param joueur le joueur en jeu
      */
-    public boolean verificationCollision(Point2D pos){
+    public void verificationCollision(Joueur joueur){
         boolean flag = false;
-        // if(pos.getX() <= 0 || pos.getX() <= aire.getMaxX()){
-        //     flag = true;
-        // }
-        // if(pos.getY() <= 0 || pos.getY() <= aire.getMaxY()){
-        //     flag = true;
-        // }
-        return flag;
+        if(joueur.getX() <= 0){
+            flag = true;
+            this.teleporter(joueur,new Point(aire.getMaxX()-1,joueur.getY()));
+        }
+        if(joueur.getX() <= aire.getMaxX() && flag == false){
+            this.teleporter(joueur,new Point(1,joueur.getY()));
+        }
+        if(joueur.getY() <= 0 && flag == false){
+            flag = true;
+            this.teleporter(joueur,new Point(joueur.getX(),aire.getMaxY()-1));
+        }
+        if(joueur.getY() <= aire.getMaxY() && flag == false){
+            this.teleporter(joueur,new Point(joueur.getX(),1));
+        }
+    }
+
+    /**
+     * @author Thomas Gauci
+     * Permet de donner teleporter un joueur a une position
+     * @param joueur le joueur à teleporter
+     * @param pos la position de la teleportation
+     */
+    private void teleporter(Joueur joueur,Point pos){
+        joueur.setPosition(pos);
     }
 
 }

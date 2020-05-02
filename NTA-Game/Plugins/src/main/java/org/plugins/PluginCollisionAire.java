@@ -21,7 +21,7 @@ public class PluginCollisionAire implements CollisionEnnemie {
     /**
      * @author Thomas Gauci
      * Permet de donner vérifier si le joueur sort de l'aire de jeu
-     * @param pos la position du joueur
+     * @param joueur le joueur en jeu
      */
     public void verificationCollision(Joueur joueur){
         boolean flag = false;
@@ -41,6 +41,12 @@ public class PluginCollisionAire implements CollisionEnnemie {
         }
     }
 
+    /**
+     * @author Thomas Gauci
+     * Permet de donner teleporter un joueur a une position
+     * @param joueur le joueur à teleporter
+     * @param pos la position de la teleportation
+     */
     private void teleporter(Joueur joueur,Point pos){
         joueur.setPosition(pos);
     }

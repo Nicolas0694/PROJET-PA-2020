@@ -83,6 +83,14 @@ public class PluginJoueur implements Joueur {
         this.position = position;
     }
 
+    public final int getX(){
+        return (int)this.position.getX();
+    }
+
+    public final int getY(){
+        return (int)this.position.getY();
+    }
+
     public final Arme getArme(){
         return this.arme;
     }

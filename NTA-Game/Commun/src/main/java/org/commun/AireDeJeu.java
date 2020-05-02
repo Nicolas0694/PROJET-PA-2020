@@ -2,7 +2,7 @@ package org.commun;
 
 public interface AireDeJeu {
 
-    public void getMaxX();
+    public int getMaxX();
     
-    public void getMaxY();
+    public int getMaxY();
 }

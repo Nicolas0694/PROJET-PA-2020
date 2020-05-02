@@ -1,5 +1,7 @@
 package org.commun;
 
+import java.awt.Point;
+
 public interface Joueur {
 
     public void tirer();
@@ -19,4 +21,10 @@ public interface Joueur {
     public void setMunition(int munition);
    
     public void setDegatArme(int degat);
+
+    public int getX();
+
+    public int getY();
+
+    public void setPosition(Point pos);
 }
