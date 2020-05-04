@@ -28,7 +28,7 @@ public class PluginCollisionAire implements CollisionEnnemie {
         boolean flag = false;
         if(joueur.getX() <= 0){
             flag = true;
-            this.teleporter(joueur,new Point(aire.getMaxX()-1,joueur.getY()));
+            this.teleporter(joueur,new Point((aire.getMaxX()-1),joueur.getY()));
         }
         if(joueur.getX() <= aire.getMaxX() && flag == false){
             this.teleporter(joueur,new Point(1,joueur.getY()));
