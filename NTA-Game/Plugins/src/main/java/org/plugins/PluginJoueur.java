@@ -2,6 +2,9 @@ package org.plugins;
 
 import java.awt.Point;
 
+import org.commun.Arme;
+import org.commun.Joueur;
+
 /**
  * @author Thomas Gauci, Alexis Vighi
  */
@@ -113,6 +116,18 @@ public class PluginJoueur implements Joueur {
 
     public final void setMunition(int munition){
         this.arme.setMunition(munition);
+    }
+
+    @Override
+    public int getX() {
+        // TODO Auto-generated method stub
+        return 0;
+    }
+
+    @Override
+    public int getY() {
+        // TODO Auto-generated method stub
+        return 0;
     }
 
 }

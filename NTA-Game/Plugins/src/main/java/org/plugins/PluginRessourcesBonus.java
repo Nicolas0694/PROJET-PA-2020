@@ -1,6 +1,10 @@
 package org.plugins;
 
 import java.util.Random;
+
+import org.commun.Joueur;
+import org.commun.RessourcesBonus;
+
 import java.lang.Math;
 
 /**
@@ -47,7 +51,7 @@ public class PluginRessourcesBonus implements RessourcesBonus {
      * Permet de donner le bonus au joueur
      * @param joueur le joueur ciblé
      */
-    public final void obtenirBonus(Joueur joueur){
+    public void obtenirBonus(Joueur joueur){
         switch(this.type) {
             case "vie":
                 joueur.setVie(this.vieBonus);
@@ -68,6 +72,12 @@ public class PluginRessourcesBonus implements RessourcesBonus {
 
     public final String getType(){
         return this.type;
+    }
+
+    @Override
+    public void obtenirBonus() {
+        // TODO Auto-generated method stub
+
     }
 
 }

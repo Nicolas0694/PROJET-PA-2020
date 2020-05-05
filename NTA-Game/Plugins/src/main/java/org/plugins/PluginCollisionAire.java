@@ -1,6 +1,10 @@
 package org.plugins;
 
 import java.awt.Point;
+
+import org.commun.AireDeJeu;
+import org.commun.CollisionEnnemie;
+import org.commun.Joueur;
 /**
  * @author Thomas Gauci
  */
