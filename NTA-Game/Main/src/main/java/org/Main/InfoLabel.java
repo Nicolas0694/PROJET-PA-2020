@@ -16,19 +16,19 @@ import java.io.FileNotFoundException;
 
 
 public class InfoLabel extends Label {
-    public final static String FONT_PATH = "file:///NTA-Game/Commun/src/main/resources/kenvector_future.ttf";
-    public static final String BACKGROUND = "file:///NTA-Game/Commun/src/main/resources/red_panel.png";
+    public final static String FONT_PATH = "file:Commun/src/main/resources/kenvector_future.ttf";
+    public static final String BACKGROUND = "file:Commun/src/main/resources/red_panel.png";
 
     public InfoLabel(String text){
-        setPrefWidth(400);
-        setPrefHeight(50);
-        setPadding(new Insets(40,40,40,40));
+        setPrefWidth(380);
+        setPrefHeight(49);
         setText(text);
         setWrapText(true);
         setLabelFont();
         setAlignment(Pos.CENTER);
 
-        BackgroundImage backgroundImage = new BackgroundImage(new Image(BACKGROUND, 400, 50, true, true), BackgroundRepeat.NO_REPEAT,
+        BackgroundImage backgroundImage = new BackgroundImage(new Image(BACKGROUND, 380, 49, false, true),
+                BackgroundRepeat.NO_REPEAT,
                 BackgroundRepeat.NO_REPEAT, BackgroundPosition.DEFAULT, null);
         setBackground(new Background(backgroundImage));
     }

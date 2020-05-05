@@ -8,9 +8,9 @@ public class PluginPicker extends VBox {
 
     private ImageView circleImage;
 
-    private String circleChoosen = "NTA-Game/Commun/src/main/resources/grey_circle.png";
+    private String circleChoosen = "file:Commun/src/main/resources/grey_circle.png";
 
-    private String circleNotChoosen = "NTA-Game/Commun/src/main/resources/grey_tickGrey.png";
+    private String circleNotChoosen = "file:Commun/src/main/resources/grey_tickGrey.png";
 
     private PLUGIN plugin;
     private boolean isCircleChoosen;
@@ -19,10 +19,12 @@ public class PluginPicker extends VBox {
         circleImage = new ImageView(circleNotChoosen);
         this.plugin=plugin;
         isCircleChoosen = false;
-       // this.setAlignement(Pos.CENTER);
+        this.setAlignment(Pos.CENTER);
         this.setSpacing(20);
         this.getChildren().add(circleImage);
     }
+
+
 
     public PLUGIN getPlugin(){
         return plugin;

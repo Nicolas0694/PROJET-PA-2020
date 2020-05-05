@@ -7,9 +7,8 @@ import java.awt.*;
 public class EnemyMovement extends Enemy {
 /*
     //Il a de la vie, une attaque, random weapon, vitesse
-    // Il a un déplacement aléatoire, si l'ennemi dans le rayon de son arme, à plus petit hp, il va le niquer
-    //SInon il se casse comme une pute, si autant il y va
-    // Il va vers l'entité la plus proche si
+    // Il a un déplacement aléatoire, si l'ennemi dans le rayon de son arme, à plus petit hp, il va le frapper
+    //SInon il s'enfuit', si autant il y va
     Vec2d enemyPos;
     Vec2d joueurPos;
     Vec2d direction; // always normalized

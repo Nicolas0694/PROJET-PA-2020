@@ -9,21 +9,23 @@ import javafx.util.Duration;
 
 public class GameSubScene extends SubScene {
 
-    private final static String FONT = "file:///NTA-Game/Commun/src/main/resources/kenvector_future.ttf";
-    private final static String BACKGROUND = "file:///NTA-Game/Commun/src/main/resources/red_panel.png";
+    private final static String FONT = "Commun/src/main/resources/kenvector_future.ttf";
+    private final static String BACKGROUND = "file:Commun/src/main/resources/red_panel.png";
     private boolean isHidden;
+
+
     public GameSubScene() {
         super(new AnchorPane(), 600, 400);
         prefWidth(600);
         prefHeight(400);
 
         BackgroundImage image = new BackgroundImage(new Image(BACKGROUND, 600, 400, false, true),
-                BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.DEFAULT, null);
+                BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.DEFAULT, null); //BackgroundSize.DEFAULT
 
         AnchorPane root2 = (AnchorPane) this.getRoot();
         root2.setBackground(new Background(image));
-        isHidden =true;
-        setLayoutX(1024);
+        isHidden = true;
+        setLayoutX(2000);
         setLayoutY(180);
     }
 
@@ -33,7 +35,7 @@ public class GameSubScene extends SubScene {
         transition.setNode(this);
 
         if(isHidden){
-        transition.setToX(-676);
+        transition.setToX(-1400);
         isHidden= false;
         } else{
             transition.setToX(0);
@@ -44,6 +46,7 @@ public class GameSubScene extends SubScene {
     }
 
     public AnchorPane getPane(){
+
         return(AnchorPane) this.getRoot();
     }
 }
