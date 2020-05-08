@@ -70,21 +70,35 @@ public class Menu extends Application {
       //  startSubscene=new GameSubScene();
       //  mainPane.getChildren().add(startSubscene);
 
-        creditsSubscene=new GameSubScene();
-        mainPane.getChildren().add(creditsSubscene);
+
 
         helpSubscene=new GameSubScene();
         mainPane.getChildren().add(helpSubscene);
 
         createPluginChooserSubScene();
-        
+        createCreditsSubscene();
+
+    }
+
+    private void createCreditsSubscene() {
+        creditsSubscene=new GameSubScene();
+        mainPane.getChildren().add(creditsSubscene);
+        Text creditsLabel = new Text("Ce jeu a été créé par \n Nicolas Drisset, \n Thomas Gauci et \n Alexis Vighi \n Profitez de cette cartouche de déconfinée \n pour vous évader");
+        creditsLabel.setLayoutX(50);
+        creditsLabel.setLayoutY(55);
+        InfoLabel titlecreditsLabel = new InfoLabel("Credits : ");
+        titlecreditsLabel.setLayoutX(110);
+        titlecreditsLabel.setLayoutY(25);
+
+        creditsSubscene.getPane().getChildren().add(creditsLabel);
+        creditsSubscene.getPane().getChildren().add(titlecreditsLabel);
+
 
     }
 
     private void createPluginChooserSubScene(){
         pluginChooserScene = new GameSubScene();
         mainPane.getChildren().add(pluginChooserScene);
-
         InfoLabel choosePluginLabel = new InfoLabel("Choose your plugins");
         choosePluginLabel.setLayoutX(110);
         choosePluginLabel.setLayoutY(25);
