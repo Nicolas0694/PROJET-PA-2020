@@ -20,6 +20,13 @@ public class MyClassLoader extends SecureClassLoader {
 		this.path = p;
 	}
 
+
+	public MyClassLoader(ClassLoader classLoader, ArrayList<File> p) {
+		super(classLoader);
+		this.path = p;
+	}
+
+
 	@Override
 	protected Class<?> findClass(String name) throws ClassNotFoundException {
 		byte[] b = loadClassData(name);
