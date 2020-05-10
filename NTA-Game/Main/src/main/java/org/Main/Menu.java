@@ -45,13 +45,11 @@ public class Menu extends Application {
         mainScene = new Scene(mainPane, WIDTH, HEIGHT);
         mainStage = new Stage();
         mainStage.setScene(mainScene);
-       // createSubscenes();
+        createSubscenes();
         createButtons();
         createBackground();
         createLogo();
-        createPluginChooserSubScene();
-        createHelpSubscene();
-        createCreditsSubscene();
+
     }
 
 
@@ -65,19 +63,10 @@ public class Menu extends Application {
             sceneToHide = subScene;
         }
 
-  /*  public void createSubscenes(){
-        startSubscene=new GameSubScene();
-        mainPane.getChildren().add(startSubscene);
-        createHelpSubscene();
+    public void createSubscenes(){
         createPluginChooserSubScene();
+        createHelpSubscene();
         createCreditsSubscene();
-        createPlayScene();
-
-    }*/
-
-    private void createPlayScene() {
-        creditsSubscene=new GameSubScene();
-        mainPane.getChildren().add(creditsSubscene);
 
     }
 
