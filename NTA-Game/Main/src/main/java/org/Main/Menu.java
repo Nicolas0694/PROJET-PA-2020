@@ -45,14 +45,13 @@ public class Menu extends Application {
         mainScene = new Scene(mainPane, WIDTH, HEIGHT);
         mainStage = new Stage();
         mainStage.setScene(mainScene);
-        createSubscenes();
+       // createSubscenes();
         createButtons();
         createBackground();
         createLogo();
-
-        //createPluginChooserSubScene();
-
-
+        createPluginChooserSubScene();
+        createHelpSubscene();
+        createCreditsSubscene();
     }
 
 
@@ -66,32 +65,34 @@ public class Menu extends Application {
             sceneToHide = subScene;
         }
 
-    public void createSubscenes(){
-      //  startSubscene=new GameSubScene();
-      //  mainPane.getChildren().add(startSubscene);
-
-
+  /*  public void createSubscenes(){
+        startSubscene=new GameSubScene();
+        mainPane.getChildren().add(startSubscene);
         createHelpSubscene();
-
-
         createPluginChooserSubScene();
         createCreditsSubscene();
+        createPlayScene();
+
+    }*/
+
+    private void createPlayScene() {
+        creditsSubscene=new GameSubScene();
+        mainPane.getChildren().add(creditsSubscene);
 
     }
 
     private void createHelpSubscene() {
         helpSubscene=new GameSubScene();
         mainPane.getChildren().add(helpSubscene);
-
         Text helpLabel = new Text("Les flèches directionnelles :\npermettent de se déplacer sur la carte.\n&\nLa barre espace :\npermet d'attaquer");
         helpLabel.setLayoutX(50);
         helpLabel.setLayoutY(55);
-        InfoLabel titlehelpLabel = new InfoLabel("Les Commandes Sont : ");
-        titlehelpLabel.setLayoutX(110);
-        titlehelpLabel.setLayoutY(25);
+        InfoLabel titleHelpLabel = new InfoLabel("Les Commandes Sont : ");
+        titleHelpLabel.setLayoutX(110);
+        titleHelpLabel.setLayoutY(25);
 
         helpSubscene.getPane().getChildren().add(helpLabel);
-        helpSubscene.getPane().getChildren().add(titlehelpLabel);
+        helpSubscene.getPane().getChildren().add(titleHelpLabel);
 
     }
 
@@ -101,12 +102,13 @@ public class Menu extends Application {
         Text creditsLabel = new Text("Ce jeu a été créé par\nNicolas Drisset,\nThomas Gauci et\nAlexis Vighi\nProfitez de cette cartouche de déconfinée\npour vous évader");
         creditsLabel.setLayoutX(50);
         creditsLabel.setLayoutY(55);
-        InfoLabel titlecreditsLabel = new InfoLabel("Credits : ");
-        titlecreditsLabel.setLayoutX(110);
-        titlecreditsLabel.setLayoutY(25);
+        InfoLabel titleCreditsLabel = new InfoLabel("Credits : ");
+        titleCreditsLabel.setLayoutX(110);
+        titleCreditsLabel.setLayoutY(25);
 
         creditsSubscene.getPane().getChildren().add(creditsLabel);
-        creditsSubscene.getPane().getChildren().add(titlecreditsLabel);
+        creditsSubscene.getPane().getChildren().add(titleCreditsLabel);
+
 
 
     }
@@ -120,6 +122,8 @@ public class Menu extends Application {
         pluginChooserScene.getPane().getChildren().add(choosePluginLabel);
         pluginChooserScene.getPane().getChildren().add(createPluginToChoose());
         pluginChooserScene.getPane().getChildren().add(createButtonToPlay());
+
+
 
     }
 
