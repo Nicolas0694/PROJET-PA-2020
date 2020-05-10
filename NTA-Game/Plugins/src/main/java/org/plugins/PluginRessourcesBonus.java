@@ -5,7 +5,6 @@ import java.util.Random;
 import org.commun.Joueur;
 import org.commun.RessourcesBonus;
 
-import java.lang.Math;
 
 /**
  * @author Thomas Gauci

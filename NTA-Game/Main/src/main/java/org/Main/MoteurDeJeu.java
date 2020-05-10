@@ -13,12 +13,12 @@ public class MoteurDeJeu {
 
     public void chargementPlugins() {
         ArrayList<File> files = new ArrayList<File>();
-        files.add(new File("Plugins/target/Plugins-1.0-SNAPSHOT-jar-with-dependencies.jar"));
+        files.add(new File("../Plugins/target/Plugins-1.0-SNAPSHOT-jar-with-dependencies.jar"));
         MyClassLoader mcl = new MyClassLoader(this.getClass().getClassLoader(), files);
         Class c;
 
         try {
-            c = mcl.loadClass("org.plugins.PluginsExemple");
+            c = mcl.loadClass("org.plugins.PluginExemple");
             System.out.println("LOADED " + c);
             Exemple test = (Exemple) c.getDeclaredConstructor().newInstance();
             test.hello();
