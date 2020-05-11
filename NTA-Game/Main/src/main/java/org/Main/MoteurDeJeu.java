@@ -4,6 +4,9 @@ import java.io.File;
 import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
 
+import org.commun.Exemple;
+import org.commun.Joueur;
+
 public class MoteurDeJeu {
 
     Joueur joueur;
@@ -20,6 +23,9 @@ public class MoteurDeJeu {
         try {
             c = mcl.loadClass("org.plugins.PluginExemple");
             System.out.println("LOADED " + c);
+            for(Class f: c.getInterfaces()){
+                System.out.println(f.getName());
+            }
             Exemple test = (Exemple) c.getDeclaredConstructor().newInstance();
             test.hello();
         } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | IllegalArgumentException | InvocationTargetException

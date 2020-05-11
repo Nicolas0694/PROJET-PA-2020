@@ -9,10 +9,6 @@ import org.commun.Exemple;
 public class PluginExemple implements Exemple 
 {
 
-    public PluginExemple() {
-        
-    }
-
     @Override
     public void hello() {
         System.out.println("hello plugin exemple");
