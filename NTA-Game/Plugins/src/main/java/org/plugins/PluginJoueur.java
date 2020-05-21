@@ -14,7 +14,7 @@ public class PluginJoueur implements Joueur {
     private int vie;
     private int bouclier;
     private Point position;
-    // private Sprite sprite
+    private Sprite sprite;
     private Arme arme;
 
     /**
