@@ -7,7 +7,7 @@ import javafx.scene.input.KeyCode;
 
 import java.util.HashMap;
 
-public class Deplacements {
+public class Controles {
 
     private HashMap<KeyCode, Boolean> keys = new HashMap<>();
 
@@ -28,7 +28,12 @@ public class Deplacements {
             PluginJoueur.animation.play();
             PluginJoueur.animation.setOffsetY(48);
             PluginJoueur.moveX(-2);
-        } else {
+        }
+        else if (isPressed(KeyCode.SPACE)) {
+            PluginJoueur.animation.play();
+            Bullet bullet = Bullet.addBullet(bullet, x, y );
+        }
+        else {
             PluginJoueur.animation.stop();
         }
     }

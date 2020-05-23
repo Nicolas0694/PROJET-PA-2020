@@ -1,4 +1,4 @@
-package org.main;
+package org.Main;
 
 import java.io.File;
 import java.io.IOException;

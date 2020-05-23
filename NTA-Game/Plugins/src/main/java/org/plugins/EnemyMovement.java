@@ -1,10 +1,5 @@
 package org.plugins;
 
-import com.sun.javafx.geom.Vec2d;
-import org.commun.Joueur;
-
-import java.awt.*;
-
 public class EnemyMovement extends Enemy {
 /*
     //Il a de la vie, une attaque, random weapon, vitesse
@@ -88,7 +83,7 @@ EnemyMovement() {
         if(PluginCollisionEnnemie.verificationCollision(this.pos)) {
             super.update(time);
             chase(joueur);
-            new Deplacements();
+            new Controles();
 
             if(attackrange.colCircleBox(joueur.taille)) {
                 attack = true;
