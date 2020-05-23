@@ -46,7 +46,8 @@ public class PluginJoueur implements Joueur {
      * @author Thomas Gauci
      * Permet au joueur d'avancer vers l'avant
      */
-    public static void avancer() {
+    @Override
+    public void avancer() {
         position.translate(1, 0);
     }
 
@@ -54,7 +55,8 @@ public class PluginJoueur implements Joueur {
      * @author Thomas Gauci
      * Permet au joueur d'avancer vers l'arrière
      */
-    public static final void reculer() {
+    @Override
+    public void reculer() {
         position.translate(-1, 0);
     }
 
@@ -62,7 +64,8 @@ public class PluginJoueur implements Joueur {
      * @author Thomas Gauci
      * Permet au joueur d'avancer vers le haut
      */
-    public static void monter() {
+    @Override
+    public void monter() {
         position.translate(0, 1);
     }
 
@@ -70,7 +73,8 @@ public class PluginJoueur implements Joueur {
      * @author Thomas Gauci
      * Permet au joueur d'avancer vers le bas
      */
-    public static final void descendre() {
+    @Override
+    public void descendre() {
         position.translate(0, -1);
     }
 

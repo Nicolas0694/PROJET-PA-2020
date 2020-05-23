@@ -6,9 +6,9 @@ public interface Joueur {
 
     public void tirer();
 
-    public static void avancer();
+    public void avancer();
 
-    public static void reculer();
+    public void reculer();
 
     public void monter();
 
