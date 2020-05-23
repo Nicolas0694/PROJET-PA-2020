@@ -63,6 +63,7 @@ public class MoteurDeJeu extends Application {
         } catch(final Exception e) {
             e.printStackTrace();
         }
+
     }
     public static void main(final String[] args){
         System.out.println("Debut programme !");
@@ -70,4 +71,5 @@ public class MoteurDeJeu extends Application {
         m.chargementPlugins();
         launch(args);
     }
+
 }

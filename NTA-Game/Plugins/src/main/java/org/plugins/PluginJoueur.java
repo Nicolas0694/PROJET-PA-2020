@@ -2,6 +2,7 @@ package org.plugins;
 
 import java.awt.Point;
 
+import javafx.animation.Animation;
 import org.commun.Arme;
 import org.commun.Joueur;
 
@@ -11,10 +12,13 @@ import org.commun.Joueur;
 
 public class PluginJoueur implements Joueur {
 
+    public static Animation timeline;
+    public int Height;
+    public int Width;
     private int vie;
     private int bouclier;
-    private Point position;
-    private Sprite sprite;
+    private static Point position;
+    // private Sprite sprite;
     private Arme arme;
 
     /**
@@ -23,7 +27,7 @@ public class PluginJoueur implements Joueur {
     public PluginJoueur() {
         this.vie = 100;
         this.bouclier = 0;
-        this.position = new Point(0,0);
+        this.position = new Point(0, 0);
         // this.sprite = 
         this.arme = null;
     }
@@ -32,8 +36,8 @@ public class PluginJoueur implements Joueur {
      * @author Thomas Gauci
      * Permet au joueur de tirer si il est armé
      */
-    public final void tirer(){
-        if(this.arme != null){
+    public final void tirer() {
+        if (this.arme != null) {
             this.arme.tirer();
         }
     }
@@ -42,79 +46,79 @@ public class PluginJoueur implements Joueur {
      * @author Thomas Gauci
      * Permet au joueur d'avancer vers l'avant
      */
-    public final void avancer(){
-        position.translate(1,0);
+    public static void avancer() {
+        position.translate(1, 0);
     }
 
     /**
      * @author Thomas Gauci
      * Permet au joueur d'avancer vers l'arrière
      */
-    public final void reculer(){
-        position.translate(-1,0);
+    public static final void reculer() {
+        position.translate(-1, 0);
     }
 
     /**
      * @author Thomas Gauci
      * Permet au joueur d'avancer vers le haut
      */
-    public final void monter(){
-        position.translate(0,1);
+    public static void monter() {
+        position.translate(0, 1);
     }
 
     /**
      * @author Thomas Gauci
      * Permet au joueur d'avancer vers le bas
      */
-    public final void descendre(){
-        position.translate(0,-1);
+    public static final void descendre() {
+        position.translate(0, -1);
     }
 
-    public final int getVie(){
+    public final int getVie() {
         return this.vie;
     }
 
-    public final void setVie(int vie){
+    public final void setVie(int vie) {
         this.vie = vie;
     }
 
-    public final Point getPosition(){
+    public final Point getPosition() {
         return this.position;
     }
 
-    public final void setPosition(Point position){
+    public final void setPosition(Point position) {
         this.position = position;
     }
 
-    public final Arme getArme(){
+    public final Arme getArme() {
         return this.arme;
     }
 
-    public final void setArme(Arme arme){
+    public final void setArme(Arme arme) {
         this.arme = arme;
     }
 
-    public final int getBouclier(){
+    public final int getBouclier() {
         return this.bouclier;
     }
 
-    public final void setBouclier(int bouclier){
+    public final void setBouclier(int bouclier) {
         this.bouclier = bouclier;
     }
 
-    public final int getDegatArme(){
+    public final int getDegatArme() {
         return this.arme.getDegat();
     }
 
-    public final void setDegatArme(int degat){
+    public final void setDegatArme(int degat) {
         this.arme.setDegat(degat);
     }
 
-    public final int getMunition(){
+    public final int getMunition() {
         return this.arme.getMunition();
     }
 
-    public final void setMunition(int munition){
+    public final void setMunition(int munition) {
         this.arme.setMunition(munition);
     }
 
@@ -130,4 +134,5 @@ public class PluginJoueur implements Joueur {
         return 0;
     }
 
+ 
 }

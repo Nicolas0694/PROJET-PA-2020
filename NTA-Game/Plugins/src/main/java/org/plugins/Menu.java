@@ -56,9 +56,6 @@ public class Menu extends Application {
 
     }
 
-
-
-
     private void showSubScene(GameSubScene subScene){
         if(sceneToHide != null) {
             sceneToHide.moveSubscene();

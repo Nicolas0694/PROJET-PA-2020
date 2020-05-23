@@ -37,6 +37,7 @@ public class PluginPicker extends VBox {
     public void setIsCircleChoosen(boolean isCircleChoosen){
         this.isCircleChoosen = isCircleChoosen;
         String pluginToSet = this.isCircleChoosen ? circleChoosen : circleNotChoosen;
-        //circleImage.setPlugin(pluginToSet);
+     //   circleImage.setPlugin(pluginToSet);
     }
+
 }
