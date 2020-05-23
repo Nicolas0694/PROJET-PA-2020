@@ -17,8 +17,8 @@ public class PluginJoueur implements Joueur {
     public int Width;
     private int vie;
     private int bouclier;
-    private static Point position;
-    // private Sprite sprite;
+    private Point position;
+    //private Sprite sprite;
     private Arme arme;
 
     /**
@@ -36,8 +36,10 @@ public class PluginJoueur implements Joueur {
      * @author Thomas Gauci
      * Permet au joueur de tirer si il est armé
      */
-    public final void tirer() {
-        if (this.arme != null) {
+
+    @Override
+    public  void tirer(){
+        if(this.arme != null){
             this.arme.tirer();
         }
     }
@@ -47,8 +49,9 @@ public class PluginJoueur implements Joueur {
      * Permet au joueur d'avancer vers l'avant
      */
     @Override
-    public void avancer() {
-        position.translate(1, 0);
+
+    public  void avancer(){
+        position.translate(1,0);
     }
 
     /**
@@ -56,8 +59,9 @@ public class PluginJoueur implements Joueur {
      * Permet au joueur d'avancer vers l'arrière
      */
     @Override
-    public void reculer() {
-        position.translate(-1, 0);
+
+    public  void reculer(){
+        position.translate(-1,0);
     }
 
     /**
@@ -65,8 +69,8 @@ public class PluginJoueur implements Joueur {
      * Permet au joueur d'avancer vers le haut
      */
     @Override
-    public void monter() {
-        position.translate(0, 1);
+    public  void monter(){
+        position.translate(0,1);
     }
 
     /**
@@ -74,55 +78,57 @@ public class PluginJoueur implements Joueur {
      * Permet au joueur d'avancer vers le bas
      */
     @Override
-    public void descendre() {
-        position.translate(0, -1);
+    public  void descendre(){
+        position.translate(0,-1);
     }
-
-    public final int getVie() {
+    @Override
+    public  int getVie(){
         return this.vie;
     }
-
-    public final void setVie(int vie) {
+    @Override
+    public  void setVie(int vie){
         this.vie = vie;
     }
-
-    public final Point getPosition() {
+    @Override
+    public  Point getPosition(){
         return this.position;
     }
-
-    public final void setPosition(Point position) {
+    @Override
+    public  void setPosition(Point position){
         this.position = position;
     }
-
-    public final Arme getArme() {
+    @Override
+    public  Arme getArme(){
         return this.arme;
     }
-
-    public final void setArme(Arme arme) {
+    @Override
+    public  void setArme(Arme arme){
         this.arme = arme;
     }
-
-    public final int getBouclier() {
+    @Override
+    public  int getBouclier(){
         return this.bouclier;
     }
-
-    public final void setBouclier(int bouclier) {
+    @Override
+    public  void setBouclier(int bouclier){
         this.bouclier = bouclier;
     }
-
-    public final int getDegatArme() {
+    @Override
+    public  int getDegatArme(){
         return this.arme.getDegat();
     }
-
-    public final void setDegatArme(int degat) {
+    @Override
+    public  void setDegatArme(int degat){
         this.arme.setDegat(degat);
     }
-
-    public final int getMunition() {
+    
+    @Override
+    public int getMunition(){
         return this.arme.getMunition();
     }
 
-    public final void setMunition(int munition) {
+    @Override
+    public void setMunition(int munition){
         this.arme.setMunition(munition);
     }
 

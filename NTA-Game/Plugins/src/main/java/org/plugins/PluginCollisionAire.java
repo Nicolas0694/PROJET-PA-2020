@@ -3,13 +3,13 @@ package org.plugins;
 import java.awt.Point;
 
 import org.commun.AireDeJeu;
-import org.commun.CollisionEnnemie;
+import org.commun.CollisionAire;
 import org.commun.Joueur;
 /**
  * @author Thomas Gauci
  */
 
-public class PluginCollisionAire implements CollisionEnnemie {
+public class PluginCollisionAire implements CollisionAire {
 
     AireDeJeu aire;
 
@@ -27,6 +27,7 @@ public class PluginCollisionAire implements CollisionEnnemie {
      * Permet de donner vérifier si le joueur sort de l'aire de jeu
      * @param joueur le joueur en jeu
      */
+    @Override
     public void verificationCollision(Joueur joueur){
         boolean flag = false;
         if(joueur.getX() <= 0){
@@ -51,7 +52,8 @@ public class PluginCollisionAire implements CollisionEnnemie {
      * @param joueur le joueur à teleporter
      * @param pos la position de la teleportation
      */
-    private void teleporter(Joueur joueur,Point pos){
+    @Override
+    public void teleporter(Joueur joueur,Point pos){
         joueur.setPosition(pos);
     }
 

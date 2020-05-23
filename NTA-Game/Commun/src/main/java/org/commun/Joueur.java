@@ -19,6 +19,20 @@ public interface Joueur {
     public void setBouclier(int bouclier);
    
     public void setMunition(int munition);
+
+    public int getMunition();
+
+    public  int getVie();
+
+    public  Point getPosition();
+
+    public  Arme getArme();
+
+    public  void setArme(Arme arme);
+
+    public  int getBouclier();
+
+    public  int getDegatArme();
    
     public void setDegatArme(int degat);
 

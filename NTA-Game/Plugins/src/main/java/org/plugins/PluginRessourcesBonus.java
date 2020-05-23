@@ -50,6 +50,7 @@ public class PluginRessourcesBonus implements RessourcesBonus {
      * Permet de donner le bonus au joueur
      * @param joueur le joueur ciblé
      */
+    @Override
     public void obtenirBonus(Joueur joueur){
         switch(this.type) {
             case "vie":
@@ -69,14 +70,8 @@ public class PluginRessourcesBonus implements RessourcesBonus {
         }
     }
 
-    public final String getType(){
+    @Override
+    public String getType(){
         return this.type;
     }
-
-    @Override
-    public void obtenirBonus() {
-        // TODO Auto-generated method stub
-
-    }
-
 }
