@@ -7,6 +7,7 @@ import javafx.scene.shape.Rectangle;
 
 
 public class Enemy {
+    private static Rectangle enemy;
     private int maxHealth;
     private int currentHealth;
     public int damage;
@@ -17,7 +18,6 @@ public class Enemy {
     public static final double WIDTH = 50;
     public static final double HEIGHT = 50;
 
-    private Rectangle enemy;
 
     /**
      * Constructor for Enemy class
@@ -29,13 +29,17 @@ public class Enemy {
         this.enemy = createRectangle(Color.RED, generateRandomEnemyX(), 0, WIDTH, HEIGHT);
     }
 
+    public static Rectangle setEnnemy(double value) {
+        return enemy;
+    }
+
     public void update(double time) {
         centerX += speedX;
         speedX = getSpeedX();
 
 
     }
-    public Rectangle getEnemy() {
+    public Rectangle setEnemy() {
         return enemy;
     }
 
