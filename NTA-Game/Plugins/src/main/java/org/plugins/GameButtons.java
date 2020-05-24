@@ -1,4 +1,4 @@
-package org.Main;
+package org.plugins;
 
 
 import javafx.scene.control.Button;

@@ -1,4 +1,4 @@
-package org.Main;
+package org.plugins;
 
 import javafx.animation.TranslateTransition;
 import javafx.scene.Parent;

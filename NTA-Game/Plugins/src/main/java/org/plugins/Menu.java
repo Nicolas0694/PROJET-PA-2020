@@ -1,9 +1,11 @@
-package org.Main;
+package org.plugins;
 
 import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.Scene;
+import javafx.scene.control.ChoiceBox;
+import javafx.scene.control.Slider;
 import javafx.scene.effect.DropShadow;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -12,7 +14,12 @@ import javafx.scene.layout.*;
 
 
 import javafx.stage.Stage;
+import org.plugins.GameButtons;
+import org.plugins.GameSubScene;
+import org.plugins.GameView;
+import org.plugins.InfoLabel;
 
+import java.awt.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -178,6 +185,21 @@ public class Menu extends Application {
         mainPane.getChildren().add(logo);
     }
     
+    public ChoiceBox setPlugin(){
+        ChoiceBox box = new ChoiceBox();
+        final Slider sliderEnemy = new Slider(0, 15, 1);
+
+        sliderEnemy.setShowTickLabels(true);
+        sliderEnemy.setShowTickMarks(true);
+        sliderEnemy.setMajorTickUnit(1);
+        sliderEnemy.setMinorTickCount(1);
+        sliderEnemy.setBlockIncrement(11);
+        Enemy.setEnnemy(sliderEnemy.getValue());
+        Label label = new Label("Nombre d'ennemies:");
+        box.setLayoutX(300-(118*2));
+        box.setLayoutY(100);
+        return box;
+    }
 
     private HBox createPluginToChoose(){
         HBox box = new HBox();
