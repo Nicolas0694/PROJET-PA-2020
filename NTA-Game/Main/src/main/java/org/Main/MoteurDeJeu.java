@@ -6,8 +6,11 @@ import java.util.ArrayList;
 
 import javafx.application.Application;
 import javafx.stage.Stage;
+
+import org.commun.CollisionAire;
 import org.commun.Exemple;
 import org.commun.Joueur;
+import org.commun.RessourcesBonus;
 import org.plugins.Menu;
 
 
@@ -47,6 +50,42 @@ public class MoteurDeJeu extends Application {
             }
             Exemple test = (Exemple) menu.getDeclaredConstructor().newInstance();
             test.hello();
+        } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | IllegalArgumentException | InvocationTargetException
+                | NoSuchMethodException | SecurityException e) {
+            e.printStackTrace();
+        }
+
+        try {
+            c = mcl.loadClass("org.plugins.PluginRessourcesBonus");
+            System.out.println("LOADED " + c);
+            for(Class f: c.getInterfaces()){
+                System.out.println(f.getName());
+            }
+            RessourcesBonus ressourcesBonus = (RessourcesBonus) c.getDeclaredConstructor().newInstance();
+        } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | IllegalArgumentException | InvocationTargetException
+                | NoSuchMethodException | SecurityException e) {
+            e.printStackTrace();
+        }
+
+        try {
+            c = mcl.loadClass("org.plugins.PluginJoueur");
+            System.out.println("LOADED " + c);
+            for(Class f: c.getInterfaces()){
+                System.out.println(f.getName());
+            }
+            Joueur joueur = (Joueur) c.getDeclaredConstructor().newInstance();
+        } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | IllegalArgumentException | InvocationTargetException
+                | NoSuchMethodException | SecurityException e) {
+            e.printStackTrace();
+        }
+
+        try {
+            c = mcl.loadClass("org.plugins.PluginCollisionAire");
+            System.out.println("LOADED " + c);
+            for(Class f: c.getInterfaces()){
+                System.out.println(f.getName());
+            }
+            CollisionAire collisionAire = (CollisionAire) c.getDeclaredConstructor().newInstance();
         } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | IllegalArgumentException | InvocationTargetException
                 | NoSuchMethodException | SecurityException e) {
             e.printStackTrace();
