@@ -9,10 +9,7 @@ Ouvrir un terminal et executer:
 1. `git clone https://github.com/Nicolas0694/PROJET-PA-2020`
 2. `cd NTA-Game`
 3. `mvn clean install`
-4. `cd Main`
-5. `mvn assembly:single`
-6. `cd ..`
-7. `java -jar Main/target/projetPA.jar`
+4. `java -jar Main/target/Main-1.0-SNAPSHOT.jar `
 -------------------------------------------------------------------------------------
 ## Technologies et méthodes déployées
 
