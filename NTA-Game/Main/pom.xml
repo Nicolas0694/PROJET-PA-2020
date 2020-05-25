@@ -64,6 +64,24 @@
                 <target>9</target>
             </configuration>
         </plugin>
+        <plugin>
+          <artifactId>maven-assembly-plugin</artifactId>
+          <version>2.2-beta-2</version>
+          <configuration>
+                      <descriptorRefs>
+                        <descriptorRef>
+                          jar-with-dependencies
+                        </descriptorRef>
+                      </descriptorRefs>
+                      <archive>
+                        <manifest>
+                          <mainClass>org.main.MoteurDeJeu</mainClass>
+                        </manifest>
+                      </archive>
+                      <finalName>projetPA</finalName>
+                      <appendAssemblyId>false</appendAssemblyId>
+         </configuration>
+      </plugin>
     </plugins>
   </build>
 </project>
