@@ -37,4 +37,4 @@ Professeur encadrant : [M. Fabrice HUET](https://github.com/fabricehuet)
 
 [MIT](http://opensource.org/licenses/MIT)
 
-Copyright (c) 2019-present, GAUCI Thomas, VIGHI Thomas, DRISSET Nicolas
+Copyright (c) 2019-present, GAUCI Thomas, VIGHI Alexis, DRISSET Nicolas
