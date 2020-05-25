@@ -1,5 +1,9 @@
 package org.plugins;
 
+import javafx.scene.effect.Light;
+import org.commun.CollisionEnnemie;
+import org.commun.Joueur;
+
 public class EnemyMovement extends Enemy {
 /*
     //Il a de la vie, une attaque, random weapon, vitesse
@@ -25,7 +29,7 @@ EnemyMovement() {
     protected boolean left = false;
     protected Maths attackrange;
     protected int r_attackrange;
-    protected Maths.Vector2f pos;
+    protected Light.Point pos;
 
     protected Maths bounds;
     boolean attack;
@@ -48,25 +52,25 @@ EnemyMovement() {
     }
 
     public void chase(PluginJoueur joueur) {
-        Maths joueurAire = joueur.taille();
+        Maths joueurAire = joueur.joueurAire;
         if (sense.colCircleBox(joueurAire) && !attackrange.colCircleBox(joueurAire)) {
-            if (pos.y > joueur.getY() + 1) {
+            if (pos.getY() > joueur.getY() + 1) {
                 up = true;
             } else {
                 up = false;
             }
-            if (pos.y < joueur.getY() - 1) {
+            if (pos.getY() < joueur.getY() - 1) {
                 down = true;
             } else {
                 down = false;
             }
 
-            if (pos.x > joueur.getX() + 1) {
+            if (pos.getX() > joueur.getX() + 1) {
                 left = true;
             } else {
                 left = false;
             }
-            if (pos.x < joueur.getX() - 1) {
+            if (pos.getX() < joueur.getX() - 1) {
                 right = true;
             } else {
                 right = false;
@@ -79,13 +83,13 @@ EnemyMovement() {
         }
     }
 
-    public void update(PluginJoueur joueur, double time) {
+    public void update(Joueur joueur, double time) {
         if(PluginCollisionEnnemie.verificationCollision(this.pos)) {
             super.update(time);
-            chase(joueur);
+            chase((PluginJoueur) joueur);
             new Controles();
 
-            if(attackrange.colCircleBox(joueur.taille)) {
+            if(attackrange.colCircleBox(((PluginJoueur) joueur).joueurAire)) {
                 attack = true;
                 joueur.setVie(joueur.getVie() - damage);
             } else {

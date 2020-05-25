@@ -20,7 +20,7 @@ public class PluginJoueur implements Joueur {
     private Point position;
     //private Sprite sprite;
     private Arme arme;
-
+    public Maths joueurAire;
     /**
      * Constructeur qui permet d'initialiser le joueur avec des statistiques de base
      */
@@ -30,6 +30,7 @@ public class PluginJoueur implements Joueur {
         this.position = new Point(0, 0);
         // this.sprite = 
         this.arme = null;
+        this.joueurAire = Height * Width;
     }
 
     /**

@@ -12,7 +12,8 @@ import javafx.scene.effect.Light.Point;
 
 public class PluginCollisionEnnemie implements CollisionEnnemie {
 
-    Joueur ennemie;
+    private static Joueur ennemie;
+    //Joueur ennemie;
 
     /**
      * Constructeur qui permet...
@@ -26,7 +27,7 @@ public class PluginCollisionEnnemie implements CollisionEnnemie {
      * Permet de donner vérifier si le joueur touche un ennemie
      * @param pos la position du joueur
      */
-    public boolean verificationCollision(Point pos){
+    public static boolean verificationCollision(Point pos){
         boolean flag = false;
         if(pos.getX() <= 0 || pos.getX() <= ennemie.getX()){
             flag = true;
