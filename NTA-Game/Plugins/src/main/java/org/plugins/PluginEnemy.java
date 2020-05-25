@@ -1,12 +1,13 @@
 package org.plugins;
 
-import java.util.Random;
-
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
+import org.commun.Enemy;
+
+import java.util.Random;
 
 
-public class Enemy {
+public class PluginEnemy implements Enemy {
     private static Rectangle enemy;
     private int maxHealth;
     private int currentHealth;
@@ -25,7 +26,7 @@ public class Enemy {
      * @param origin
      * @param size
      */
-    public Enemy(Enemy rectangle, Maths.Vector2f origin, int size) {
+    public PluginEnemy(Enemy rectangle, Maths.Vector2f origin, int size) {
         this.enemy = createRectangle(Color.RED, generateRandomEnemyX(), 0, WIDTH, HEIGHT);
     }
 
@@ -39,11 +40,18 @@ public class Enemy {
 
 
     }
+
+    @Override
+    public void Rectangle() {
+
+    }
+
+
     public Rectangle setEnemy() {
         return enemy;
     }
 
-    private double generateRandomEnemyX() {
+    public double generateRandomEnemyX() {
         Random r = new Random();
         return (100 - WIDTH) * r.nextDouble();
     }
@@ -85,6 +93,41 @@ public class Enemy {
 
     public int getCenterY() {
         return centerY;
+    }
+
+    @Override
+    public void setMaxHealth() {
+
+    }
+
+    @Override
+    public void setCurrentHealth() {
+
+    }
+
+    @Override
+    public void setDamage() {
+
+    }
+
+    @Override
+    public void setArme() {
+
+    }
+
+    @Override
+    public void setSpeedX() {
+
+    }
+
+    @Override
+    public void setCenterX() {
+
+    }
+
+    @Override
+    public void setCenterY() {
+
     }
 
     public void setMaxHealth(int maxHealth) {

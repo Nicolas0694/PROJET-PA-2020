@@ -29,6 +29,8 @@ public class Maths {
         size = r;
     }
 
+
+
     public Vector2f getPos() { return pos; }
 
     public float getRadius() { return r; }
@@ -108,6 +110,7 @@ public class Maths {
 
         return totalRadius < (dx * dx) + (dy * dy);
     }
+
 
     public boolean colCircleBox(Maths aBox) {
 

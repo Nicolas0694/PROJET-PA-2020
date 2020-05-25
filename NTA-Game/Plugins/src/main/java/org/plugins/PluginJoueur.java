@@ -1,10 +1,10 @@
 package org.plugins;
 
-import java.awt.Point;
-
 import javafx.animation.Animation;
 import org.commun.Arme;
 import org.commun.Joueur;
+
+import java.awt.*;
 
 /**
  * @author Thomas Gauci, Alexis Vighi
@@ -13,14 +13,15 @@ import org.commun.Joueur;
 public class PluginJoueur implements Joueur {
 
     public static Animation timeline;
-    public int Height;
-    public int Width;
+    public static int Height;
+    public static int Width;
+
     private int vie;
     private int bouclier;
     private Point position;
     //private Sprite sprite;
     private Arme arme;
-    public Maths joueurAire;
+    public int joueurAire;
     /**
      * Constructeur qui permet d'initialiser le joueur avec des statistiques de base
      */
@@ -30,9 +31,7 @@ public class PluginJoueur implements Joueur {
         this.position = new Point(0, 0);
         // this.sprite = 
         this.arme = null;
-        this.joueurAire = Height * Width;
     }
-
     /**
      * @author Thomas Gauci
      * Permet au joueur de tirer si il est armé
@@ -145,5 +144,8 @@ public class PluginJoueur implements Joueur {
         return 0;
     }
 
- 
+
+    public Maths getAire() {
+        return getAire();
+    }
 }

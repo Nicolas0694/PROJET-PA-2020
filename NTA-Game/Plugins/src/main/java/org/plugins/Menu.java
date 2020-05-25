@@ -77,7 +77,7 @@ public class Menu extends Application {
     private void createHelpSubscene() {
         helpSubscene=new GameSubScene();
         mainPane.getChildren().add(helpSubscene);
-        Text helpLabel = new Text("Les flèches directionnelles :\npermettent de se déplacer sur la carte.\n&\nLa barre espace :\npermet d'attaquer");
+        Text helpLabel = new Text("Les flèches directionnelles :\npermettent de se déplacer sur la carte.\n \nLa barre espace :\npermet d'attaquer \n&\n La touche entrée : \n permet de mettre sur Pause");
         helpLabel.setLayoutX(50);
         helpLabel.setLayoutY(55);
         InfoLabel titleHelpLabel = new InfoLabel("Les Commandes Sont : ");
@@ -191,7 +191,7 @@ public class Menu extends Application {
         sliderEnemy.setMajorTickUnit(1);
         sliderEnemy.setMinorTickCount(1);
         sliderEnemy.setBlockIncrement(11);
-        Enemy.setEnnemy(sliderEnemy.getValue());
+        PluginEnemy.setEnnemy(sliderEnemy.getValue());
         Label label = new Label("Nombre d'ennemies:");
         box.setLayoutX(300-(118*2));
         box.setLayoutY(100);
