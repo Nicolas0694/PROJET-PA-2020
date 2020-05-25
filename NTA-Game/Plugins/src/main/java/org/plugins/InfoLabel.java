@@ -1,6 +1,5 @@
 package org.plugins;
 
-import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
@@ -15,7 +14,7 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 
 
-public class InfoLabel extends Label {
+public class InfoLabel extends Label implements org.commun.InfoLabel {
     public final static String FONT_PATH = "file:Commun/src/main/resources/kenvector_future.ttf";
     public static final String BACKGROUND = "file:Commun/src/main/resources/red_panel.png";
 
@@ -33,7 +32,7 @@ public class InfoLabel extends Label {
         setBackground(new Background(backgroundImage));
     }
 
-    private void setLabelFont() {
+    public void setLabelFont() {
         try {
             setFont(Font.loadFont(new FileInputStream(new File(FONT_PATH)), 23));
         } catch(FileNotFoundException e){

@@ -1,18 +1,18 @@
 package org.commun;
 
+import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
 
 public interface Enemy {
 
 
-
-    public void Rectangle();
-
-    public void update(double time);
+    static void createRectangle(Color red, double generateRandomEnemyX, int i, double width, double height) {
+    }
 
     public Rectangle setEnemy();
 
     public double generateRandomEnemyX();
+
 
     public int getMaxHealth();
 
@@ -28,19 +28,21 @@ public interface Enemy {
 
     public int getCenterY() ;
 
-    public void setMaxHealth();
 
-    public void setCurrentHealth();
 
-    public void setDamage();
+    void setMaxHealth(int maxHealth);
 
-    public void setArme();
+    void setCurrentHealth(int currentHealth);
 
-    public void setSpeedX();
+    void setDamage(int damage);
 
-    public void setCenterX();
+    void setArme(String arme);
 
-    public void setCenterY();
+    void setSpeedX(int speedX);
+
+    void setCenterX(int centerX);
+
+    void setCenterY(int centerY);
 }
 
 

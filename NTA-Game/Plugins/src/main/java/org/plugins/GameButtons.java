@@ -5,12 +5,13 @@ import javafx.scene.control.Button;
 import javafx.scene.effect.DropShadow;
 import javafx.scene.input.MouseButton;
 import javafx.scene.text.Font;
+import org.commun.GameButtonsInterface;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 
 
-public class GameButtons extends Button{
+public class GameButtons extends Button implements GameButtonsInterface {
 
     private final String FONT_PATH = "//Commun/src/main/resources/kenvector_future.ttf";
     private final String BUTTON_PRESSED_STYLE = "-fx-background-color: transparent; -fx-background-image: url('file:Commun/src/main/resources/Pressed.png');";
@@ -25,26 +26,30 @@ public class GameButtons extends Button{
         initializeButtonListeners();
     }
 
-    private void setButtonFont() {
+    @Override
+    public void setButtonFont() {
         try {
             setFont(Font.loadFont(new FileInputStream(FONT_PATH), 23));
         } catch (FileNotFoundException e) {
             setFont(Font.font("Verdana", 23));
         }
     }
-    private void setButtonPressedStyle() {
+    @Override
+    public void setButtonPressedStyle() {
         setStyle(BUTTON_PRESSED_STYLE);
         setPrefHeight(45);
         setLayoutY(getLayoutY() + 4);
     }
 
-    private void setButtonReleasedStyle() {
+    @Override
+    public void setButtonReleasedStyle() {
         setStyle(BUTTON_FREE_STYLE);
         setPrefHeight(49);
         setLayoutY(getLayoutY() - 4);
     }
 
-    private void initializeButtonListeners(){
+    @Override
+    public void initializeButtonListeners(){
 
         setOnMousePressed(event -> {
             if(event.getButton().equals(MouseButton.PRIMARY)) {

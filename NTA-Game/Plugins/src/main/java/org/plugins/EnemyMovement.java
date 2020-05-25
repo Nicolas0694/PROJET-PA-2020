@@ -1,7 +1,6 @@
 package org.plugins;
 
 import javafx.scene.effect.Light;
-import javafx.scene.shape.Rectangle;
 import org.commun.Joueur;
 
 public class EnemyMovement extends PluginEnemy {
@@ -36,6 +35,8 @@ public class EnemyMovement extends PluginEnemy {
         sense = new Maths(new Maths.Vector2f(origin.x + size / 2 - r_sense / 2, origin.y + size / 2 - r_sense / 2), r_sense);
         attackrange = new Maths(new Maths.Vector2f(origin.x + bounds.getXOffset() + bounds.getWidth() / 2 - r_attackrange / 2 , origin.y + bounds.getYOffset() + bounds.getHeight() / 2 - r_attackrange / 2 ), r_attackrange);
     }
+
+    @Override
     public void chase(PluginJoueur joueur) {
         Maths joueurAire = joueur.getAire();
         if (sense.colCircleBox(joueurAire) && !attackrange.colCircleBox(joueurAire)) {
@@ -68,6 +69,7 @@ public class EnemyMovement extends PluginEnemy {
         }
     }
 
+    @Override
     public void update(Joueur joueur) {
         if(PluginCollisionEnnemie.verificationCollision(this.pos)) {
             chase((PluginJoueur) joueur);
@@ -83,94 +85,4 @@ public class EnemyMovement extends PluginEnemy {
     }
         }
 
-
-    @Override
-    public void Rectangle() {
-
-    }
-
-    @Override
-    public void update(double time) {
-
-    }
-
-    @Override
-    public Rectangle setEnemy() {
-        return null;
-    }
-
-    @Override
-    public double generateRandomEnemyX() {
-        return 0;
-    }
-
-    @Override
-    public int getMaxHealth() {
-        return 0;
-    }
-
-    @Override
-    public int getCurrentHealth() {
-        return 0;
-    }
-
-    @Override
-    public int getDamage() {
-        return 0;
-    }
-
-    @Override
-    public String getArme() {
-        return null;
-    }
-
-    @Override
-    public int getSpeedX() {
-        return 0;
-    }
-
-    @Override
-    public int getCenterX() {
-        return 0;
-    }
-
-    @Override
-    public int getCenterY() {
-        return 0;
-    }
-
-    @Override
-    public void setMaxHealth() {
-
-    }
-
-    @Override
-    public void setCurrentHealth() {
-
-    }
-
-    @Override
-    public void setDamage() {
-
-    }
-
-    @Override
-    public void setArme() {
-
-    }
-
-    @Override
-    public void setSpeedX() {
-
-    }
-
-    @Override
-    public void setCenterX() {
-
-    }
-
-    @Override
-    public void setCenterY() {
-
-    }
 }
