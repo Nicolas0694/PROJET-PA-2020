@@ -1,12 +1,14 @@
 package org.plugins;
 
-import java.util.Random;
-
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
+import org.commun.Enemy;
+import org.commun.Joueur;
+
+import java.util.Random;
 
 
-public class Enemy {
+public abstract class PluginEnemy implements Enemy {
     private static Rectangle enemy;
     private int maxHealth;
     private int currentHealth;
@@ -25,8 +27,9 @@ public class Enemy {
      * @param origin
      * @param size
      */
-    public Enemy(Enemy rectangle, Maths.Vector2f origin, int size) {
-        this.enemy = createRectangle(Color.RED, generateRandomEnemyX(), 0, WIDTH, HEIGHT);
+
+    public PluginEnemy(Enemy rectangle, Maths.Vector2f origin, int size) {
+        Enemy.createRectangle(Color.RED, generateRandomEnemyX(), 0, WIDTH, HEIGHT);
     }
 
     public static Rectangle setEnnemy(double value) {
@@ -39,11 +42,19 @@ public class Enemy {
 
 
     }
+
+    public abstract void chase(PluginJoueur joueur);
+
+    public abstract void update(Joueur joueur);
+
+
+    @Override
     public Rectangle setEnemy() {
         return enemy;
     }
 
-    private double generateRandomEnemyX() {
+    @Override
+    public double generateRandomEnemyX() {
         Random r = new Random();
         return (100 - WIDTH) * r.nextDouble();
     }
@@ -59,58 +70,74 @@ public class Enemy {
         return rectangle;
     }
 
+    @Override
     public int getMaxHealth() {
         return maxHealth;
     }
 
+    @Override
     public int getCurrentHealth() {
         return currentHealth;
     }
 
+    @Override
     public int getDamage() {
         return damage;
     }
 
+    @Override
     public String getArme() {
         return String.valueOf(arme);
     }
 
+    @Override
     public int getSpeedX() {
         return speedX;
     }
 
+    @Override
     public int getCenterX() {
         return centerX;
     }
 
+    @Override
     public int getCenterY() {
         return centerY;
     }
 
+
+
+    @Override
     public void setMaxHealth(int maxHealth) {
         this.maxHealth = maxHealth;
     }
 
+    @Override
     public void setCurrentHealth(int currentHealth) {
         this.currentHealth = currentHealth;
     }
 
+    @Override
     public void setDamage(int damage) {
         this.damage = damage;
     }
 
+    @Override
     public void setArme(String arme) {
         this.arme = arme;
     }
 
+    @Override
     public void setSpeedX(int speedX) {
         this.speedX = speedX;
     }
 
+    @Override
     public void setCenterX(int centerX) {
         this.centerX = centerX;
     }
 
+    @Override
     public void setCenterY(int centerY) {
         this.centerY = centerY;
     }

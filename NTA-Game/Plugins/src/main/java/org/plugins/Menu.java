@@ -4,27 +4,21 @@ import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.Scene;
-import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Slider;
 import javafx.scene.effect.DropShadow;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.*;
-
-
 import javafx.stage.Stage;
-import org.plugins.GameButtons;
-import org.plugins.GameSubScene;
-import org.plugins.GameView;
-import org.plugins.InfoLabel;
+import org.commun.MenuInterface;
 
 import java.awt.*;
 import java.util.ArrayList;
 import java.util.List;
 
 
-public class Menu extends Application {
+public class Menu extends Application implements MenuInterface {
 
     private static final int HEIGHT = 880;
     private static final int WIDTH = 1300;
@@ -59,28 +53,25 @@ public class Menu extends Application {
 
     }
 
-
-
-
-    private void showSubScene(GameSubScene subScene){
+    public void showSubScene(GameSubScene subScene){
         if(sceneToHide != null) {
             sceneToHide.moveSubscene();
         }
         subScene.moveSubscene();
             sceneToHide = subScene;
         }
-
+    @Override
     public void createSubscenes(){
         createPluginChooserSubScene();
         createHelpSubscene();
         createCreditsSubscene();
 
     }
-
-    private void createHelpSubscene() {
+    @Override
+    public void createHelpSubscene() {
         helpSubscene=new GameSubScene();
         mainPane.getChildren().add(helpSubscene);
-        Text helpLabel = new Text("Les flèches directionnelles :\npermettent de se déplacer sur la carte.\n&\nLa barre espace :\npermet d'attaquer");
+        Text helpLabel = new Text("Les flèches directionnelles :\npermettent de se déplacer sur la carte.\n \nLa barre espace :\npermet d'attaquer \n&\nLa touche entrée : \npermet de mettre sur Pause");
         helpLabel.setLayoutX(50);
         helpLabel.setLayoutY(55);
         InfoLabel titleHelpLabel = new InfoLabel("Les Commandes Sont : ");
@@ -92,7 +83,8 @@ public class Menu extends Application {
 
     }
 
-    private void createCreditsSubscene() {
+    @Override
+    public void createCreditsSubscene() {
         creditsSubscene=new GameSubScene();
         mainPane.getChildren().add(creditsSubscene);
         Text creditsLabel = new Text("Ce jeu a été créé par\nNicolas Drisset,\nThomas Gauci et\nAlexis Vighi\nProfitez de cette cartouche de déconfinée\npour vous évader");
@@ -109,7 +101,8 @@ public class Menu extends Application {
 
     }
 
-    private void createPluginChooserSubScene(){
+    @Override
+    public void createPluginChooserSubScene(){
         pluginChooserScene = new GameSubScene();
         mainPane.getChildren().add(pluginChooserScene);
         InfoLabel choosePluginLabel = new InfoLabel("Choose your plugins");
@@ -123,13 +116,14 @@ public class Menu extends Application {
 
     }
 
-    private void addMenuButton(GameButtons button){
+    public void addMenuButton(GameButtons button){
         button.setLayoutX(MENU_BUTTONS_X);
         button.setLayoutY(MENU_BUTTONS_Y + menuButtons.size()*100);
         menuButtons.add(button);
         mainPane.getChildren().add(button);
     }
 
+    @Override
     public void createButtons() {
         createStartButton();
         createHelpButton();
@@ -137,7 +131,8 @@ public class Menu extends Application {
         createExitButton();
     }
 
-    private void createStartButton(){
+    @Override
+    public void createStartButton(){
         GameButtons startButton = new GameButtons("Start");
         addMenuButton(startButton);
 
@@ -149,17 +144,20 @@ public class Menu extends Application {
         });
 
     }
-    private void createHelpButton(){
+    @Override
+    public void createHelpButton(){
         GameButtons helpButton = new GameButtons("Help");
         addMenuButton(helpButton);
         helpButton.setOnAction(event -> showSubScene(helpSubscene));
     }
-    private void createCreditsButton(){
+    @Override
+    public void createCreditsButton(){
         GameButtons creditsButton = new GameButtons("Credits");
         addMenuButton(creditsButton);
         creditsButton.setOnAction(event -> showSubScene(creditsSubscene));
     }
-    private void createExitButton(){
+    @Override
+    public void createExitButton(){
         GameButtons exitButton = new GameButtons("Exit");
         addMenuButton(exitButton);
 
@@ -167,13 +165,15 @@ public class Menu extends Application {
 
     }
 
-    private void createBackground(){
+    @Override
+    public void createBackground(){
         Image backgroundImage = new Image("file:Commun/src/main/resources/background.png", 1080,728, false,true);
         BackgroundImage background = new BackgroundImage(backgroundImage, BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.DEFAULT, null);
         mainPane.setBackground(new Background(background));
     }
 
-    private void createLogo(){
+    @Override
+    public void createLogo(){
         ImageView logo = new ImageView("file:Commun/src/main/resources/NTA_ITSINTHEGAME.png");
         logo.setLayoutX(1);
         logo.setLayoutY(10);
@@ -184,9 +184,9 @@ public class Menu extends Application {
 
         mainPane.getChildren().add(logo);
     }
-    
-    public ChoiceBox setPlugin(){
-        ChoiceBox box = new ChoiceBox();
+
+    @Override
+    public Slider setPlugin(){
         final Slider sliderEnemy = new Slider(0, 15, 1);
 
         sliderEnemy.setShowTickLabels(true);
@@ -194,14 +194,15 @@ public class Menu extends Application {
         sliderEnemy.setMajorTickUnit(1);
         sliderEnemy.setMinorTickCount(1);
         sliderEnemy.setBlockIncrement(11);
-        Enemy.setEnnemy(sliderEnemy.getValue());
+        PluginEnemy.setEnnemy(sliderEnemy.getValue());
         Label label = new Label("Nombre d'ennemies:");
-        box.setLayoutX(300-(118*2));
-        box.setLayoutY(100);
-        return box;
+        sliderEnemy.setLayoutX(300-(118*2));
+        sliderEnemy.setLayoutY(100);
+        return sliderEnemy;
     }
 
-    private HBox createPluginToChoose(){
+    @Override
+    public HBox createPluginToChoose(){
         HBox box = new HBox();
         box.setSpacing(20);
         pluginList = new ArrayList<>();
@@ -225,7 +226,7 @@ public class Menu extends Application {
         return box;
     }
 
-    private GameButtons createButtonToPlay(){
+    public GameButtons createButtonToPlay(){
         GameButtons playButton = new GameButtons ("Play");
         playButton.setLayoutX(350);
         playButton.setLayoutY(300);
@@ -239,6 +240,7 @@ public class Menu extends Application {
         return playButton;
     }
 
+    @Override
     public Stage getMainStage(){
         return mainStage;
     }

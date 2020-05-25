@@ -1,21 +1,16 @@
 package org.plugins;
 
-import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.control.Label;
-import javafx.scene.image.Image;
-import javafx.scene.layout.Background;
-import javafx.scene.layout.BackgroundImage;
-import javafx.scene.layout.BackgroundPosition;
-import javafx.scene.layout.BackgroundRepeat;
 import javafx.scene.text.Font;
+import org.commun.TextInterface;
 
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 
 
-public class Text extends Label {
+public class Text extends Label implements TextInterface {
     public final static String FONT_PATH = "file:Commun/src/main/resources/kenvector_future.ttf";
 
     public Text(String text){

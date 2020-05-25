@@ -1,13 +1,13 @@
 package org.plugins;
 
 import javafx.animation.TranslateTransition;
-import javafx.scene.Parent;
 import javafx.scene.SubScene;
 import javafx.scene.image.Image;
 import javafx.scene.layout.*;
 import javafx.util.Duration;
+import org.commun.GameSubsceneInterface;
 
-public class GameSubScene extends SubScene {
+public class GameSubScene extends SubScene implements GameSubsceneInterface {
 
     private final static String FONT = "Commun/src/main/resources/kenvector_future.ttf";
     private final static String BACKGROUND = "file:Commun/src/main/resources/red_panel.png";
@@ -29,6 +29,7 @@ public class GameSubScene extends SubScene {
         setLayoutY(180);
     }
 
+    @Override
     public void moveSubscene(){
         TranslateTransition transition = new TranslateTransition();
         transition.setDuration(Duration.seconds(0.3));
@@ -45,6 +46,7 @@ public class GameSubScene extends SubScene {
 
     }
 
+    @Override
     public AnchorPane getPane(){
 
         return(AnchorPane) this.getRoot();

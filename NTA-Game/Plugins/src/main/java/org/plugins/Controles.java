@@ -8,6 +8,7 @@ import javafx.scene.Scene;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.stage.Stage;
+import org.commun.Joueur;
 
 import java.util.HashMap;
 
@@ -15,31 +16,33 @@ public class Controles {
 
     private HashMap<KeyCode, Boolean> keys = new HashMap<>();
     Timeline timeline = new Timeline();
+    PluginJoueur getPosition;
 
-    public void update() {
+
+    public void update(Joueur joueur) {
         if (isPressed(KeyCode.UP)) {
             PluginJoueur.timeline.play();
-            PluginJoueur.animation.setOffsetY(96);
-            PluginJoueur.monter();
+          //  PluginJoueur.animation.setOffsetY(96);
+            joueur.monter();
         } else if (isPressed(KeyCode.DOWN)) {
             PluginJoueur.timeline.play();
-            PluginJoueur.animation.setOffsetY(0);
-            PluginJoueur.descendre();
+          //  PluginJoueur.animation.setOffsetY(0);
+            joueur.descendre();
         } else if (isPressed(KeyCode.RIGHT)) {
             PluginJoueur.timeline.play();
-            PluginJoueur.animation.setOffsetY(48);
-            PluginJoueur.avancer();
+         //   PluginJoueur.animation.setOffsetY(48);
+            joueur.avancer();
         } else if (isPressed(KeyCode.LEFT)) {
             PluginJoueur.timeline.play();
-            PluginJoueur.animation.setOffsetY(48);
-            PluginJoueur.reculer();
+         //   PluginJoueur.timeline.setOffsetY(48);
+            joueur.reculer();
         }
         else if (isPressed(KeyCode.SPACE)) {
             PluginJoueur.timeline.play();
-            Bullet bullet = Bullet.addBullet(bullet, x, y );
+            joueur.tirer();
         }
         else {
-            PluginJoueur.animation.stop();
+            PluginJoueur.timeline.stop();
         }
     }
     public boolean isPressed(KeyCode key) {

@@ -1,5 +1,7 @@
 package org.plugins;
 
-public enum PLUGIN {
+import org.commun.PluginInterface;
+
+public enum PLUGIN implements PluginInterface {
 
 }
