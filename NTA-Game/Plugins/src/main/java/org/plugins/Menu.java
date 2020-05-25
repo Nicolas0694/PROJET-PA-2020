@@ -182,8 +182,7 @@ public class Menu extends Application {
         mainPane.getChildren().add(logo);
     }
     
-    public ChoiceBox setPlugin(){
-        ChoiceBox box = new ChoiceBox();
+    public Slider setPlugin(){
         final Slider sliderEnemy = new Slider(0, 15, 1);
 
         sliderEnemy.setShowTickLabels(true);
@@ -193,9 +192,9 @@ public class Menu extends Application {
         sliderEnemy.setBlockIncrement(11);
         PluginEnemy.setEnnemy(sliderEnemy.getValue());
         Label label = new Label("Nombre d'ennemies:");
-        box.setLayoutX(300-(118*2));
-        box.setLayoutY(100);
-        return box;
+        sliderEnemy.setLayoutX(300-(118*2));
+        sliderEnemy.setLayoutY(100);
+        return sliderEnemy;
     }
 
     private HBox createPluginToChoose(){
