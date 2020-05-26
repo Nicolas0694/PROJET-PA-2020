@@ -13,7 +13,6 @@ import javafx.scene.layout.*;
 import javafx.stage.Stage;
 import org.commun.MenuInterface;
 
-import java.awt.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -39,7 +38,7 @@ public class Menu extends Application implements MenuInterface {
 
     List<PluginPicker> pluginList;
     private PLUGIN choosenPlugin;
-    
+
     public Menu(){
         menuButtons = new ArrayList<>();
         mainPane = new AnchorPane();
@@ -58,8 +57,8 @@ public class Menu extends Application implements MenuInterface {
             sceneToHide.moveSubscene();
         }
         subScene.moveSubscene();
-            sceneToHide = subScene;
-        }
+        sceneToHide = subScene;
+    }
     @Override
     public void createSubscenes(){
         createPluginChooserSubScene();
@@ -106,10 +105,14 @@ public class Menu extends Application implements MenuInterface {
         pluginChooserScene = new GameSubScene();
         mainPane.getChildren().add(pluginChooserScene);
         InfoLabel choosePluginLabel = new InfoLabel("Choose your plugins");
+        Text label = new Text("Nombre d'ennemies:");
+        label.setLayoutX(-80);
+        label.setLayoutY(-50);
         choosePluginLabel.setLayoutX(110);
         choosePluginLabel.setLayoutY(25);
         pluginChooserScene.getPane().getChildren().add(choosePluginLabel);
-        pluginChooserScene.getPane().getChildren().add(createPluginToChoose());
+        pluginChooserScene.getPane().getChildren().add(label);
+        pluginChooserScene.getPane().getChildren().add(setPlugin());
         pluginChooserScene.getPane().getChildren().add(createButtonToPlay());
 
 
@@ -188,16 +191,14 @@ public class Menu extends Application implements MenuInterface {
     @Override
     public Slider setPlugin(){
         final Slider sliderEnemy = new Slider(0, 15, 1);
-
         sliderEnemy.setShowTickLabels(true);
         sliderEnemy.setShowTickMarks(true);
         sliderEnemy.setMajorTickUnit(1);
         sliderEnemy.setMinorTickCount(1);
         sliderEnemy.setBlockIncrement(11);
         PluginEnemy.setEnnemy(sliderEnemy.getValue());
-        Label label = new Label("Nombre d'ennemies:");
-        sliderEnemy.setLayoutX(300-(118*2));
-        sliderEnemy.setLayoutY(100);
+        sliderEnemy.setLayoutX(280-(118*2));
+        sliderEnemy.setLayoutY(120);
         return sliderEnemy;
     }
 
