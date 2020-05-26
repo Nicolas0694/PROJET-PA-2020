@@ -164,7 +164,12 @@ public class Menu extends Application implements MenuInterface {
         GameButtons exitButton = new GameButtons("Exit");
         addMenuButton(exitButton);
 
-        exitButton.setOnAction(event -> mainStage.close());
+        exitButton.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                mainStage.close();
+            }
+        });
 
     }
 
@@ -233,10 +238,8 @@ public class Menu extends Application implements MenuInterface {
         playButton.setLayoutY(300);
 
         playButton.setOnAction(event -> {
-            if (choosenPlugin != null){
                 GameView gameManager = new GameView();
                 gameManager.createNewGame(mainStage, choosenPlugin);
-            }
         });
         return playButton;
     }

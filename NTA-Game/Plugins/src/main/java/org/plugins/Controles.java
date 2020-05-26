@@ -1,10 +1,7 @@
 package org.plugins;
 
-import javafx.animation.AnimationTimer;
 import javafx.animation.Timeline;
-import javafx.application.Application;
 import javafx.event.EventHandler;
-import javafx.scene.Scene;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.stage.Stage;
@@ -41,6 +38,10 @@ public class Controles {
             PluginJoueur.timeline.play();
             joueur.tirer();
         }
+        else if (isPressed(KeyCode.ESCAPE)) {
+            final Menu menu = new Menu();
+            Stage primaryStage = menu.getMainStage();
+            primaryStage.show();        }
         else {
             PluginJoueur.timeline.stop();
         }
