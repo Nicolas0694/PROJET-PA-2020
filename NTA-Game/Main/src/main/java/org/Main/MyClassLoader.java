@@ -1,12 +1,10 @@
-package org.main;
+package org.Main;
 
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
-import java.lang.reflect.Method;
 import java.nio.file.Files;
 import java.security.SecureClassLoader;
-
 import java.util.ArrayList;
 import java.util.regex.Pattern;
 import java.util.zip.ZipEntry;

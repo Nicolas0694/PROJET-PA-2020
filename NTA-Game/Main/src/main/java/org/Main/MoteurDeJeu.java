@@ -1,17 +1,16 @@
-package org.main;
-
-import java.io.File;
-import java.lang.reflect.InvocationTargetException;
-import java.util.ArrayList;
+package org.Main;
 
 import javafx.application.Application;
 import javafx.stage.Stage;
-
 import org.commun.CollisionAire;
 import org.commun.Exemple;
 import org.commun.Joueur;
 import org.commun.RessourcesBonus;
-import org.plugins.Menu;
+import org.plugins.*;
+
+import java.io.File;
+import java.lang.reflect.InvocationTargetException;
+import java.util.ArrayList;
 
 
 public class MoteurDeJeu extends Application {
@@ -90,8 +89,117 @@ public class MoteurDeJeu extends Application {
                 | NoSuchMethodException | SecurityException e) {
             e.printStackTrace();
         }
-		
-    }
+        try {
+            c = mcl.loadClass("org.plugins.Controles");
+            System.out.println("LOADED " + c);
+            for(Class f: c.getInterfaces()){
+                System.out.println(f.getName());
+            }
+            Controles controles = (Controles) c.getDeclaredConstructor().newInstance();
+        } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | IllegalArgumentException | InvocationTargetException
+                | NoSuchMethodException | SecurityException e) {
+            e.printStackTrace();
+        }
+        try {
+            c = mcl.loadClass("org.plugins.EnemyMovement");
+            System.out.println("LOADED " + c);
+            for(Class f: c.getInterfaces()){
+                System.out.println(f.getName());
+            }
+            EnemyMovement enemyMovement = (EnemyMovement) c.getDeclaredConstructor().newInstance();
+        } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | IllegalArgumentException | InvocationTargetException
+                | NoSuchMethodException | SecurityException e) {
+            e.printStackTrace();
+        }
+        try {
+            c = mcl.loadClass("org.plugins.Maths");
+            System.out.println("LOADED " + c);
+            for(Class f: c.getInterfaces()){
+                System.out.println(f.getName());
+            }
+            Maths maths = (Maths) c.getDeclaredConstructor().newInstance();
+        } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | IllegalArgumentException | InvocationTargetException
+                | NoSuchMethodException | SecurityException e) {
+            e.printStackTrace();
+        }
+        try {
+            c = mcl.loadClass("org.plugins.GameButtons");
+            System.out.println("LOADED " + c);
+            for(Class f: c.getInterfaces()){
+                System.out.println(f.getName());
+            }
+            GameButtons gameButtons = (GameButtons) c.getDeclaredConstructor().newInstance();
+        } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | IllegalArgumentException | InvocationTargetException
+                | NoSuchMethodException | SecurityException e) {
+            e.printStackTrace();
+        }
+        try {
+            c = mcl.loadClass("org.plugins.GameSubScenes");
+            System.out.println("LOADED " + c);
+            for(Class f: c.getInterfaces()){
+                System.out.println(f.getName());
+            }
+            GameSubScene gameSubScene = (GameSubScene) c.getDeclaredConstructor().newInstance();
+        } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | IllegalArgumentException | InvocationTargetException
+                | NoSuchMethodException | SecurityException e) {
+            e.printStackTrace();
+        }
+        try {
+            c = mcl.loadClass("org.plugins.GameView");
+            System.out.println("LOADED " + c);
+            for(Class f: c.getInterfaces()){
+                System.out.println(f.getName());
+            }
+            GameView gameview = (GameView) c.getDeclaredConstructor().newInstance();
+        } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | IllegalArgumentException | InvocationTargetException
+                | NoSuchMethodException | SecurityException e) {
+            e.printStackTrace();
+        }
+        try {
+            c = mcl.loadClass("org.plugins.InfoLabel");
+            System.out.println("LOADED " + c);
+            for(Class f: c.getInterfaces()){
+                System.out.println(f.getName());
+            }
+            InfoLabel infoLabel = (InfoLabel) c.getDeclaredConstructor().newInstance();
+        } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | IllegalArgumentException | InvocationTargetException
+                | NoSuchMethodException | SecurityException e) {
+            e.printStackTrace();
+        }
+        try {
+            c = mcl.loadClass("org.plugins.PluginArme");
+            System.out.println("LOADED " + c);
+            for(Class f: c.getInterfaces()){
+                System.out.println(f.getName());
+            }
+            PluginArme pluginArme = (PluginArme) c.getDeclaredConstructor().newInstance();
+        } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | IllegalArgumentException | InvocationTargetException
+                | NoSuchMethodException | SecurityException e) {
+            e.printStackTrace();
+        }
+        try {
+            c = mcl.loadClass("org.plugins.PluginEnemy");
+            System.out.println("LOADED " + c);
+            for(Class f: c.getInterfaces()){
+                System.out.println(f.getName());
+            }
+            PluginEnemy pluginEnemy = (PluginEnemy) c.getDeclaredConstructor().newInstance();
+        } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | IllegalArgumentException | InvocationTargetException
+                | NoSuchMethodException | SecurityException e) {
+            e.printStackTrace();
+        }
+        try {
+            c = mcl.loadClass("org.plugins.PluginPicker");
+            System.out.println("LOADED " + c);
+            for(Class f: c.getInterfaces()){
+                System.out.println(f.getName());
+            }
+            PluginPicker pluginPicker = (PluginPicker) c.getDeclaredConstructor().newInstance();
+        } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | IllegalArgumentException | InvocationTargetException
+                | NoSuchMethodException | SecurityException e) {
+            e.printStackTrace();
+        }
+}
 
     @Override
     public void start(Stage primaryStage) {

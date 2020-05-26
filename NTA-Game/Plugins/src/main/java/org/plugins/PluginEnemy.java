@@ -43,11 +43,6 @@ public abstract class PluginEnemy implements Enemy {
 
     }
 
-    public abstract void chase(PluginJoueur joueur);
-
-    public abstract void update(Joueur joueur);
-
-
     @Override
     public Rectangle setEnemy() {
         return enemy;
@@ -59,7 +54,7 @@ public abstract class PluginEnemy implements Enemy {
         return (100 - WIDTH) * r.nextDouble();
     }
 
-    public static Rectangle createRectangle(Color color, double x, double y, double width, double height) {
+    public Rectangle createRectangle(Color color, double x, double y, double width, double height) {
         Rectangle rectangle = new Rectangle();
         rectangle.setFill(color);
         rectangle.setX(x);
@@ -141,4 +136,8 @@ public abstract class PluginEnemy implements Enemy {
     public void setCenterY(int centerY) {
         this.centerY = centerY;
     }
+
+    public abstract void chase(PluginJoueur joueur);
+
+    public abstract void update(Joueur joueur);
 }
