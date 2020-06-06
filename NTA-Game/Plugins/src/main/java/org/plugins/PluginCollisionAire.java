@@ -21,6 +21,9 @@ public class PluginCollisionAire implements CollisionAire {
     public PluginCollisionAire(AireDeJeu aire) {
         this.aire = aire;
     }
+    public PluginCollisionAire() {
+
+    }
 
     /**
      * @author Thomas Gauci
